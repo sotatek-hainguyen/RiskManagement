@@ -7,10 +7,22 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {mainRoutes} from '../main/mainRoutes';
 import {Button} from 'react-native-elements';
+import styled from 'styled-components';
 
 const WelcomeScreen = () => {
   const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList, 'Auth'>>();
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const Title = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: palevioletred;
+  `;
+
+  const Wrapper = styled.section`
+    padding: 4em;
+    margin-top: 10px;
+    background: papayawhip;
+  `;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>WelcomeScreen</Text>
@@ -18,14 +30,12 @@ const WelcomeScreen = () => {
       <Button
         style={{marginTop: 20}}
         icon={<Logo />}
-        title="Button with icon component"
+        title="Click to Auth"
+        onPress={() => navigation.navigate(mainRoutes.Auth)}
       />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate(mainRoutes.Auth)}>
-        <Text style={styles.title}>{'Click to Auth'}</Text>
-      </TouchableOpacity>
-      <Logo />
+      <Wrapper>
+        <Title>Hello World!</Title>
+      </Wrapper>
     </View>
   );
 };
