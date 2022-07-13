@@ -18,18 +18,10 @@ const babelLoaderConfiguration = {
     path.resolve(__dirname, 'index.web.js'), // Entry to your application
     path.resolve(__dirname, 'App.web.tsx'), // Change this to your main App file
     path.resolve(__dirname, 'src'),
-    path.resolve(
-      __dirname,
-      'node_modules/react-native-reanimated/lib/createAnimatedComponent.js',
-    ),
-    path.resolve(
-      __dirname,
-      'node_modules/react-native-reanimated/lib/reanimated1/Transitioning.js',
-    ),
-    path.resolve(
-      __dirname,
-      'node_modules/react-native-reanimated/lib/reanimated2/component/FlatList.js',
-    ),
+    path.resolve(__dirname, 'node_modules/react-native-reanimated/lib'),
+    path.resolve(__dirname, 'node_modules/react-native-elements'),
+    path.resolve(__dirname, 'node_modules/react-native-vector-icons'),
+    path.resolve(__dirname, 'node_modules/react-native-ratings'),
     ...compileNodeModules,
   ],
   use: {

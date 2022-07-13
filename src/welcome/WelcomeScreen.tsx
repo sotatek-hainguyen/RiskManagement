@@ -6,6 +6,7 @@ import {RootStackParamList} from '../main/Navigation';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {mainRoutes} from '../main/mainRoutes';
+import {Button} from 'react-native-elements';
 
 const WelcomeScreen = () => {
   const navigation =
@@ -13,6 +14,12 @@ const WelcomeScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>WelcomeScreen</Text>
+      <Button title="Solid Button" />
+      <Button
+        style={{marginTop: 20}}
+        icon={<Logo />}
+        title="Button with icon component"
+      />
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate(mainRoutes.Auth)}>
